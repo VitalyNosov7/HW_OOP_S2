@@ -13,11 +13,10 @@ public class Bat extends Animal {
             LocalDate birthDay,
             List<Vaccination> vaccinations,
             Color color,
-            Boolean flyingAnimal,
+            double speed,
             String breed) {
-        super(name, weight, owner, birthDay, vaccinations, color, flyingAnimal = true);
+        super(name, weight, owner, birthDay, vaccinations, color, speed);
         this.breed = breed;
-
     }
 
     public String getBreed() {

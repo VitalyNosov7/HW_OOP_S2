@@ -25,13 +25,13 @@ public class Main {
         Owner alex = new Owner("Alexey");
         Vaccination chumka = new Vaccination("chumka", LocalDate.of(2010, 12, 5));
 
-        Animal barsik = new Cat("barsik", 10.0, alex, LocalDate.now(), List.of(chumka), Color.BLACK, false, "siamskiy");
-        Dog barbos = new Dog("barbos", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, true, "Такса");
-        Turtle Donatelo = new Turtle("Donatelo", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, true, "Морская черепаха");
-        Bat Aero = new Bat("Aero", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, false, "летучая мышь");
-        Cat pushok = new Cat("pushok", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, true, "Сфинкс");
-        Bird Kesha = new Bird("Kesha", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, false, "Попугай");
-        Rat Larisa = new Rat("Larisa", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, true, "Крыса Сирийская");
+        Animal barsik = new Cat("barsik", 10.0, alex, LocalDate.now(), List.of(chumka), Color.BLACK, 0.3, "siamskiy");
+        Dog barbos = new Dog("barbos", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, 0.7, "Такса");
+        Turtle Donatelo = new Turtle("Donatelo", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, 3, "Морская черепаха");
+        Bat Aero = new Bat("Aero", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, 5.4, "летучая мышь");
+        Cat pushok = new Cat("pushok", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE,7.3, "Сфинкс");
+        Bird Kesha = new Bird("Kesha", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, 11, "Попугай");
+        Rat Larisa = new Rat("Larisa", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, 8.0, "Крыса Сирийская");
 
         Donatelo.fly();
         barsik.fly();

@@ -12,9 +12,9 @@ public class Hamster extends Animal {
             LocalDate birthDay,
             List<Vaccination> vaccinations,
             Color color,
-            Boolean flyingAnimal,
+            double speed,
             String breed) {
-        super(name, weight, owner, birthDay, vaccinations, color, flyingAnimal = false);
+        super(name, weight, owner, birthDay, vaccinations, color, speed);
         this.breed = breed;
     }
 

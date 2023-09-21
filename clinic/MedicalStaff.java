@@ -63,7 +63,7 @@ public class MedicalStaff {
         System.out.println(this.TYPE + " берет кровь на анализ.");
     }
 
-    private void  toMedicalRecordEntry(){
+    public void  toMedicalRecordEntry(){
         System.out.println(this.TYPE + " записывает информацию о пациенте в медкарту.");
     }
 

@@ -13,44 +13,44 @@ public class Animal implements Illable {
     private List<Vaccination> vaccinations;
     private Color color;
     private final String TYPE = this.getClass().getSimpleName();
-    private  Boolean flyingAnimal;
-    //private Boolean swimmingAnimal;
-   
+    protected double speed;
 
     public Animal(
-                String name,
-                double weight,
-                Owner owner,
-                LocalDate birthDay,
-                List<Vaccination> vaccinations,
-                Color color,
-                Boolean flyingAnimal
-                ) {
+            String name,
+            double weight,
+            Owner owner,
+            LocalDate birthDay,
+            List<Vaccination> vaccinations,
+            Color color,
+            double speed) {
         this.name = name;
         this.weight = weight;
         this.owner = owner;
         this.birthDay = birthDay;
         this.vaccinations = vaccinations;
         this.color = color;
-        this.flyingAnimal = flyingAnimal;
-       
+        this.speed = speed;
+
     }
 
     public Animal(
-                String name,
-                double weight,
-                Owner owner,
-                LocalDate birthDay,
-                Color color,
-                Boolean flyingAnimal
-                ) {
-                this(name, weight, owner, birthDay, null, color, flyingAnimal);
+            String name,
+            double weight,
+            Owner owner,
+            LocalDate birthDay,
+            Color color,
+            Boolean flyingAnimal) {
+        this(name, weight, owner, birthDay, null, color, 0.0);
     }
 
     public Animal(String name) {
         this.name = name;
     }
 
+    public Animal(String name, double speed) {
+        this.name = name;
+        this.speed = speed;
+    }
 
     public void lifeCycle() {
         wakeUp();
@@ -61,16 +61,16 @@ public class Animal implements Illable {
     }
 
     private void toGo() {
-        
+
         System.out.println(this.TYPE + " двигается.");
     }
 
     public void fly() {
-        if(this.flyingAnimal != false){
-            System.out.println(this.TYPE + " летает.");
-        }else{
-            System.out.println(this.TYPE + " летать не способен!");
-        }
+        // if(this.flyingAnimal != false){
+        // System.out.println(this.TYPE + " летает.");
+        // }else{
+        // System.out.println(this.TYPE + " летать не способен!");
+        // }
     }
 
     private void swim() {

@@ -2,8 +2,9 @@ package animal;
 
 import java.time.LocalDate;
 import java.util.List;
+import clinic.Runable;
 
-public class Cat extends Animal {
+public class Cat extends Animal  implements Runable{
     private String breed;
 
     public Cat(String name,
@@ -12,14 +13,19 @@ public class Cat extends Animal {
             LocalDate birthDay,
             List<Vaccination> vaccinations,
             Color color,
-            Boolean flyingAnimal,
+            double speed,
             String breed) {
-        super(name, weight, owner, birthDay, vaccinations, color, flyingAnimal = false);
+        super(name, weight, owner, birthDay, vaccinations, color, speed);
         this.breed = breed;
 
     }
 
     public String getBreed() {
         return breed;
+    }
+
+    @Override
+    public void getRunSpeed() {
+        //System.out.printf("%s по кличке '%s' убегает к хозяину со скоростью %.1f%n", this.TYPE, this.getName(), this.getSpeed());
     }
 }
