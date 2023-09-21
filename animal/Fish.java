@@ -3,7 +3,9 @@ package animal;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Fish extends Animal {
+import clinic.Swimable;
+
+public class Fish extends Animal implements Swimable{
     private String breed;
 
     public Fish(String name,
@@ -21,4 +23,9 @@ public class Fish extends Animal {
     public String getBreed() {
         return breed;
     }
+
+     @Override
+     public void getSwimSpeed() {
+        System.out.printf("%s '%s' плавает со скоростью %.1f км.ч %n", this.TYPE, this.getName(), this.getSpeed());
+     }
 }

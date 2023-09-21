@@ -2,8 +2,9 @@ package animal;
 
 import java.time.LocalDate;
 import java.util.List;
+import clinic.Flyable;
 
-public class Bird extends Animal {
+public class Bird extends Animal implements Flyable{
     private String breed;
 
     public Bird(String name,
@@ -22,5 +23,10 @@ public class Bird extends Animal {
     public String getBreed() {
         return breed;
     }
+
+    @Override
+    public void getFlySpeed (){
+        System.out.printf("%s '%s' летает со скоростью %.1f км.ч %n", this.TYPE, this.getName(), this.getSpeed());
+    };
 
 }

@@ -4,7 +4,7 @@ public class MedicalStaff {
     private String name;
     private String speciality;
     private PersonnelCategory personnelCategory;
-    private final String TYPE = this.getClass().getSimpleName();
+    protected final String TYPE = this.getClass().getSimpleName();
 
     public MedicalStaff(){
 

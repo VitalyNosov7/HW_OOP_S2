@@ -12,7 +12,7 @@ public class Animal implements Illable {
     private LocalDate birthDay;
     private List<Vaccination> vaccinations;
     private Color color;
-    private final String TYPE = this.getClass().getSimpleName();
+    protected final String TYPE = this.getClass().getSimpleName();
     protected double speed;
 
     public Animal(
@@ -60,45 +60,33 @@ public class Animal implements Illable {
         goToSleep();
     }
 
-    private void toGo() {
-
-        System.out.println(this.TYPE + " двигается.");
-    }
-
-    public void fly() {
-        // if(this.flyingAnimal != false){
-        // System.out.println(this.TYPE + " летает.");
-        // }else{
-        // System.out.println(this.TYPE + " летать не способен!");
-        // }
-    }
-
-    private void swim() {
-        System.out.println(this.TYPE + " плавает.");
-    }
 
     private void wakeUp() {
-        System.out.println(this.TYPE + " проснулся.");
+        System.out.printf("%s   %s проснулся.%n", this.TYPE, this.getName());
+    }
+
+    protected void toGo() {
+        System.out.printf("%s   %s двигается.%n", this.TYPE, this.getName());
     }
 
     private void findFood() {
-        System.out.println(this.TYPE + " ищет еду.");
+        System.out.printf("%s   %s ищет еду.%n", this.TYPE, this.getName());
     }
 
     private void eat() {
-        System.out.println(this.TYPE + " кушает.");
+        System.out.printf("%s   %s ищет кушает.%n", this.TYPE, this.getName());
     }
 
     private void toPlay() {
-        System.out.println(this.TYPE + " играет.");
+        System.out.printf("%s   %s играет.%n", this.TYPE, this.getName());
     }
 
     private void goToSleep() {
-        System.out.println(this.TYPE + " собирается спать.");
+        System.out.printf("%s   %s ищет собирается спать.%n", this.TYPE, this.getName());
     }
 
-    public void sound() {
-        System.out.println(this.TYPE + " издает звук.");
+    public void toSound() {
+        System.out.printf("%s   %s ищет издает звук.%n", this.TYPE, this.getName());
     }
 
     // getters
@@ -134,8 +122,17 @@ public class Animal implements Illable {
         return TYPE;
     }
 
+    public double getSpeed() {
+        return this.speed;
+    }
+
     @Override
     public void heal() {
-        System.out.println("Ветеринар лечит " + this.TYPE);
+        System.out.printf("%s лечит ",this.TYPE);
+    }
+
+    @Override
+    public String toString() {
+        return TYPE + " по кличке " + name + '\'';
     }
 }

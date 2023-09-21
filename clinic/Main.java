@@ -1,25 +1,3 @@
-/*
-// Домашнее задание.
-========================================================================
- * Урок 2. Принципы ООП Абстракция и интерфейсы. Пример проектирования
-========================================================================
-V 1. Создать класс Doctor и подумать над его поведением и состоянием.
-V 2. Создать класс Nurse(медсестра) и подумать над его поведением и состоянием.
-V 3. В классе доктора должно быть поле с типом Nurse.
-V 4. Придумайте метод, при котором доктор взаимодействует с медсестрой.
-
-V 5. Создать класс Создайте интерфейсы Runnable, Flyable, Swimable. У интерфейсов должны быть
-методы получения скорости заданного действия.
-
-6. Добавьте наследников этим интерфейсам
-
-7. У ветеринарной клиники добавьте методы получения всех бегающих, всех плавающих, всех говорящих и всех летающих.
-
-Формат сдачи: ссылка на гитхаб проект
-========================================================================
- */
-
-
 package clinic;
 
 import animal.*;
@@ -30,18 +8,45 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        VeterinaryClinic clinic = new VeterinaryClinic(new ArrayList<>());
-        clinic.addAnimal(new Cat("", 12.0, new Owner("Alex"), LocalDate.now(), List.of(new Vaccination("chumka", LocalDate.now())), Color.BLACK, 0.3, ""));
-        
-  
+
+        Owner alex = new Owner("Alexey");
+        Vaccination chumka = new Vaccination("chumka", LocalDate.of(2010, 12, 5));
+
         Nurse nrsIvanova = new Nurse("Иванова", PersonnelCategory.NURSE, "Медсестра");
         Doctor drPetrov = new Doctor("Petov", PersonnelCategory.DOCTOR, "Ветеринар", nrsIvanova);
-        
+
+        Dog barbos = new Dog("barbos", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, 0.7, "Такса");
+        Turtle Donatelo = new Turtle("Donatelo", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, 1.5,
+                "Морская черепаха");
+        Bat Aero = new Bat("Aero", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, 5.4, "летучая мышь");
+        Cat pushok = new Cat("pushok", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, 7.3, "Сфинкс");
+        Bird Kesha = new Bird("Kesha", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, 11, "Попугай");
+        Rat Larisa = new Rat("Larisa", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, 8.0,
+                "Крыса Сирийская");
+        Fish Nemo = new Fish("Nemo", 0.1, alex, LocalDate.now(), null, null, 0.1, null);
+
         nrsIvanova.primaryMedicalExaminationPatient();
         drPetrov.toHaveAnOperation();
         drPetrov.giveTaskToStaff(drPetrov.getName(), nrsIvanova.getName());
         nrsIvanova.toMedicalRecordEntry();
-        
+
+        VeterinaryClinic veterinaryClinic = new VeterinaryClinic(new ArrayList<>());
+
+        veterinaryClinic.addAnimal(barbos);
+        veterinaryClinic.addAnimal(Donatelo);
+        veterinaryClinic.addAnimal(Aero);
+        veterinaryClinic.addAnimal(pushok);
+        veterinaryClinic.addAnimal(Kesha);
+        veterinaryClinic.addAnimal(Larisa);
+        veterinaryClinic.addAnimal(Nemo);
+
+        System.out.println("=========================================");
+        veterinaryClinic.getRunAnimal();
+        System.out.println("=========================================");
+        veterinaryClinic.getFlyAnimal();
+        System.out.println("=========================================");
+        veterinaryClinic.getSwimAnimal();
+        System.out.println("=========================================");
 
     }
 }

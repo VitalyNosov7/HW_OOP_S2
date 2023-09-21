@@ -11,7 +11,7 @@ public class Doctor extends MedicalStaff {
 
     public void giveTaskToStaff(String nameDoctor, String nameNurse){
     
-        System.out.printf("Доктор %s  даёт распоряжения сотруднику %s%n", nameDoctor, nameNurse);
+        System.out.printf("%s %s  даёт распоряжения сотруднику %s%n",this.TYPE, nameDoctor, nameNurse);
     }
 
 } 

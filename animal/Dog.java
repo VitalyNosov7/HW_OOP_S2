@@ -2,8 +2,9 @@ package animal;
 
 import java.time.LocalDate;
 import java.util.List;
+import clinic.Runable;
 
-public class Dog extends Animal {
+public class Dog extends Animal implements Runable {
 
     private String breed;
 
@@ -23,4 +24,10 @@ public class Dog extends Animal {
     public String getBreed() {
         return breed;
     }
+
+    @Override
+    public void getRunSpeed() {
+        System.out.printf("%s '%s' бегает со скоростью %.1f км.ч %n", this.TYPE, this.getName(), this.getSpeed());
+    }
+
 }

@@ -26,6 +26,6 @@ public class Cat extends Animal  implements Runable{
 
     @Override
     public void getRunSpeed() {
-        //System.out.printf("%s по кличке '%s' убегает к хозяину со скоростью %.1f%n", this.TYPE, this.getName(), this.getSpeed());
+        System.out.printf("%s '%s' бегает со скоростью %.1f км.ч %n", this.TYPE, this.getName(), this.getSpeed());
     }
 }
